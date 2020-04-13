@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Media Queries</title>
+<style>
+/* Regras de uso geral: para qualquer
+dispositivo, qualquer tamanho de tela */
+html { font-size: 16px; }    
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightblue;
+}
+
+h1 { 
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+img { max-width: 100%; }
+
+h2 { 
+    border-bottom: solid 2px; 
+    font-size: 1.2rem;
+}
+
+p { font-size: 1.1rem; }
+
+figure { text-align: center; }
+
+/* 1º breakpoint (media query) 
+Mídia do tipo tela e com largura a partir de 500px */
+@media screen and (min-width: 500px) {
+    body { background-color: lightgreen; }
+    h1 { color: red; }
+}
+
+/* 2º breakpoint (media query) 
+Mídia do tipo tela e com largura a partir de 637px */
+@media screen and (min-width: 637px){
+    h2 { 
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+/* 3º breakpoint (media query) 
+Mídia do tipo tela e com largura a partir de 700px */
+@media screen and (min-width: 700px){
+    html { font-size: 20px; }
+}
+
+
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>Media Queries (Media Query)</h1>
+    <hr>
+    <figure>
+        <img src="imagens/front-end.jpg" alt="">
+        <figcaption>Design Responsivo</figcaption>
+    </figure>
+    <h2>Conceito</h2>
+    <p>São regras especiais em que criamos alterações na página web de acordo com <b>determinadas condições</b>.</p>
+    <p>Também conhecidas como <b>breakpoints</b> (pontos de adaptação).</p>
+
+    <h2>Aplicação</h2>
+    <p>Media Queries são aplicadas de acordo com a estratégia usada para design responsivo:</p>
+    <ul>
+        <li><b>Mobile First: telas pequenas para grandes</b></li>
+        <li>Desktop First: telas grandes para pequenas</li>
+    </ul>
+</div>   
+</body>
+</html>
