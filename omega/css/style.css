@@ -202,6 +202,7 @@ Telas com largura à partir de 1000px */
         position: fixed;
         width: 100%;
         top: 0;
+        z-index: 10;
     }
     
     /* Como fixamos o header na regra anterior, 
