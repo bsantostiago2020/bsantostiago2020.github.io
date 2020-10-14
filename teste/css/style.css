@@ -1,0 +1,97 @@
+@charset "utf8";
+
+*, *::before, *::after { box-sizing: border-box;
+                        -webkit-box-sizing:border-box ;
+                        -moz-box-sizing: border-box;                 
+}
+
+
+html{ 
+        font-size: 15px;
+        background-image: url(../imagens/tarde.jpg);
+        
+}
+
+body { 
+        background-color:whitesmoke;
+        font-family: 'Segoe UI';
+        margin: 50px;
+        padding:50px;
+        border: solid 2px;
+        font-family: 'Baloo Tamma 2', cursive;
+
+}   
+
+h1, h2 {
+        text-align: center;
+        color: blue;
+}
+
+img{max-width: 100%;}
+
+figure{
+        text-align-last: center;
+        font-weight: bold;
+}
+
+nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+}
+
+.botao {
+        display: flex;
+        justify-content: center;
+        text-decoration:none;
+        background-color:blue;
+        color: white;
+        border:solid 1px;
+        width: 50%;
+        height: 50%;
+        text-align: center;
+}
+.voltar{
+        background-color: blue;
+        text-decoration: none;
+        color:white;
+        margin: 10px;
+        padding: 10px;
+}
+
+@media screen and (max-width: 400px) {
+      
+        body { 
+                background-color: lightgreen;
+                font-size: 10px;
+        }
+       
+        figure{ text-align: center;}
+        
+        h1 {    text-align: center;
+                color: brown;
+        }
+        h2 {
+                text-align: justify;
+                color: brown;
+                font-size: 10px;
+                font-weight: bold;
+        }
+        
+        nav{
+                display: flex;
+                flex-direction: column;
+        }
+        
+        .botao { background-color: brown;}
+
+        .voltar{
+                background-color: brown;
+                text-align: center;
+                margin: 5px;
+                padding:5px;
+        }
+       
+}
