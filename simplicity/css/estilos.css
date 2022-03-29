@@ -1,0 +1,196 @@
+/* Alteração do Box Model */
+*, *::after, *::before { box-sizing: border-box; }
+
+html { font-size: 14px; }
+
+body { 
+    background-color: whitesmoke; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img { max-width: 100%; }
+
+/* Reset de elementos */
+body, h1, h2, h3, p, figure {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+a { text-decoration: none; }
+
+h1 a {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+}
+
+header { 
+    background-color: white; 
+    text-transform: uppercase; 
+    
+    /* Deixar o cabeçalho fixo */
+    position: sticky;
+    top: 0;
+}
+
+/* Regra para um elemento (no caso, uma div) com
+a classe limitador E dentro do header 
+
+Importante: o flex configurado aqui funcionará SOMENTE
+para a classe limitador aplicada na div dentro do header.
+Além disso, ela também estará recebendo max-width e margin
+vindos da regra da classe. */
+header .limitador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: lightblue; */
+
+    height: 10vh;
+}
+
+/* Regra para QUALQUER elemento com a classe limitador */
+.limitador {
+    max-width: 1100px;
+    margin: auto;
+    width: 95%;
+}
+
+/* Regras para o texto/link MENU */
+nav h2 { text-align: right; }
+
+nav h2 a { 
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block;
+}
+
+nav h2 a:hover,
+nav h2 a:focus,
+.links-menu a:hover,
+.links-menu a:focus {
+    background-color: gainsboro;
+}
+
+.links-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    /* Esta propriedade será
+    usada posteriormente para esconder
+    a lista */
+    display: none;
+}
+
+.links-menu a {
+    color: black;
+    font-weight: bold;
+
+    background-color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Esta regra somente irá funcionar
+quando as duas classes estiverem juntas 
+(links-menu e aberto).
+
+Obs.: esta regra será aplicada posteriormente
+com o auxílio de programação JavaScript */
+.links-menu.aberto {
+    /* Neste ponto, usamos o flex pra voltar
+    a exibir o menu (quando aberto) */
+    display: flex;
+
+    /* E fazemos com que os links apareçam 
+    verticalmente */
+    flex-direction: column;
+    
+    /* Usamos position e coordenadas
+    para garantir o posicionamento 
+    correto do menu quando aberto */
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+
+.destaque {
+    background-image: url(../imagens/fundo-destaque.jpg);
+    color: white;
+    height: 90vh;
+
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    /* Alinha tudo (h2 e p) ao centro  */
+    align-content: center;
+}
+
+/* Sem esta definição de tamanho,
+o flex-wrap não funciona */
+.destaque h2, 
+.destaque p {
+    width: 100%;
+}
+
+.destaque h2 {
+    /* Fonte Responsiva usando
+    função clamp(mínimo, ideal, máximo) */
+    font-size: clamp(2rem, 10vw, 7rem);
+
+    /* Etapa 2: chamar e configurar a
+    animação */
+    animation-name: aparecer;
+    animation-duration: 3s;
+    /* animation-iteration-count: infinite;
+    animation-direction: alternate-reverse; */
+ }
+
+.destaque p {
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-weight: bold;
+
+    /* Sintaxe COMPLETA */
+    /* animation-name: aparecer;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards; */
+
+    /* Sintaxe ABREVIADA */
+    animation: aparecer 10s 2s backwards;
+}
+
+
+/* Etapa 1: Regra de Animação */
+@keyframes aparecer {  
+    /* dê */
+    from { 
+        transform: translateY(-100vh);
+        opacity: 0; 
+    }    
+    
+    /* para */
+    to { 
+        transform: translateY(0);
+        opacity: 1; 
+    }     
+}
+
