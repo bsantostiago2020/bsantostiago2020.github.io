@@ -71,7 +71,7 @@ Grava o snapshot permanentemente do arquivo no histórico de versão
 # Revise o histórico
 Navegue e inspecione a evolução dos arquivos do projeto
 
-`git log`
+`git log` 
 
 Lista o histórico de versões para o branch atual
 
